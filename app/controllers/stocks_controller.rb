@@ -5,13 +5,6 @@ class StocksController < ApplicationController
 			@stock = Stock.find_by_ticker(params[:stock])
 			@stock ||= Stock.new_from_lookup(params[:stock])
 		end
-
-		if @stock
-			#render json: @stock
-			render partial: 'lookup'
-		else
-			render status: :not_fount, nothing: true
-		end
 	end
 
 end
