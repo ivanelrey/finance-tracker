@@ -1,0 +1,7 @@
+<% if @users %>
+$("#friend-lookup").html("<%= j render(partial: 'friends/lookup') %>");
+<% else %>
+$("#friend-lookup-result").replaceWith(" ");
+$("#friend-lookup-errors").replaceWith("Users could not found.");
+$("#spinner").hide();
+<% end %>
